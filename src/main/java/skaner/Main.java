@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String args[]) throws FileNotFoundException {
 
-    Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         System.out.println("Podaj sciezke katalogu");
         sourceDirectory = input.nextLine();
@@ -19,20 +19,20 @@ public class Main {
         System.out.println("3 - Usuwanie plikow z podanego katalogu");
 
 
-
-        int choice =input.nextInt();
-        switch(choice) {
-        case 1:
-            System.out.println();
-            break;
-        case 2:
-            System.out.println();
-            break;
-        case 3:
-            System.out.println();
-            break;
-        default:
-            System.out.println("Invalid option");
-            break;
+        int choice = input.nextInt();
+        switch (choice) {
+            case 1:
+                System.out.println();
+                break;
+            case 2:
+                System.out.println();
+                break;
+            case 3:
+                System.out.println();
+                break;
+            default:
+                System.out.println("Invalid option");
+                break;
+        }
     }
 }
