@@ -16,10 +16,9 @@ public void checkFolderSizeTest () {
     CheckFileSize cfs = new CheckFileSize();
 //Act
 long fileSize = cfs.checkFileSize(testFile);
-//
+//Assert
 
     assertFalse(fileSize == 0);
-
 
 }
 }
