@@ -4,9 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class FileListFromDirectory {
-    private static ArrayList<File> fileList = new ArrayList<>();
+    private static ArrayList<SearchFile> fileList = new ArrayList<>();
 
-    public static ArrayList<File> GetFileListFromDirectory(String sourceDirectory) {
+    public static ArrayList<SearchFile> GetFileListFromDirectory(String sourceDirectory) {
         PenetrateDirectory(sourceDirectory, -1);
         return fileList;
     }
@@ -19,7 +19,7 @@ public class FileListFromDirectory {
             if (file.isFile()) {
 //                saveLine(tabs(level)+file.getName()+" ["+byteDisplaySize(file.length())+"]");
                 Long fileSize = CheckFile.getFileSize(file.getName());
-                fileList.add(new File(file.getName(), file.lastModified(), fileSize));
+                fileList.add(new SearchFile(file.getName(), file.lastModified(), fileSize));
             } else if (file.isDirectory() /* && RECURSIVE */) {
 //                saveLine(tabs(level)+"["+file.getName()+"] ["+byteDisplaySize(getDirectorySize(file.toString()))+"]");
                 PenetrateDirectory(file.toString(), level);
@@ -57,10 +57,10 @@ public class FileListFromDirectory {
 
 /*
     public static Long getDirectorySize(String sourceDirectory) {
-        File directory = new File(sourceDirectory);
-        File[] files = directory.listFiles();
+        SearchFile directory = new SearchFile(sourceDirectory);
+        SearchFile[] files = directory.listFiles();
         Long sizeAll = 0L;
-        for (File file : files) {
+        for (SearchFile file : files) {
             if (file.isFile()) {
                 sizeAll += file.length();
             } else if (file.isDirectory() */

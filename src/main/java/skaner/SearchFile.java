@@ -1,6 +1,6 @@
 package skaner;
 
-public class File {
+public class SearchFile {
     private String FileName;
     private Long LastModified;
     private Long FileSize;
@@ -29,12 +29,12 @@ public class File {
         FileSize = fileSize;
     }
 
-    public File(String fileName, Long lastModified, Long fileSize) {
+    public SearchFile() {
+    }
+
+    public SearchFile(String fileName, Long lastModified, Long fileSize) {
         FileName = fileName;
         LastModified = lastModified;
         FileSize = fileSize;
-    }
-
-    public File() {
     }
 }
